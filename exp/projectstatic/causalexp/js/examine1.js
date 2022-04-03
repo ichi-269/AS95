@@ -56,7 +56,6 @@ function read_json(filename) {
     }).responseText;
     return JSON.parse(json);
 }
-
 function getImages() {
     for (scenario in scenarios){
         for(type in image_type){
