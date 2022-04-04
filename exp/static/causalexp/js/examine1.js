@@ -6,9 +6,9 @@ var estimations = [];
 var predictions = [];
 var sample_order = [];
 var mutation_prediction = [];
-let scenarios = shuffle(['mouse','rabbit','pigeon']);
-let frequency = shuffle(['1','2','3']);
-let bgcolors = shuffle(['#FFFFF0','#FFF0F5','#F0F8FF']);
+let scenarios = shuffle(['mouse']);
+let frequency = shuffle(['1']);
+let bgcolors = shuffle(['#FFFFF0']);
 let image_type = ["p", "notp", "q", "notq"];
 let img_combination = {
     'a': {'cause': 'p', 'effect': 'q'},
@@ -56,7 +56,6 @@ function read_json(filename) {
     }).responseText;
     return JSON.parse(json);
 }
-
 function getImages() {
     for (scenario in scenarios){
         for(type in image_type){
