@@ -143,10 +143,10 @@ function to_next_sample() {
         return;
     }
     // 10刺激ごとに因果関係の強さを聞く
-    else if(current_test_page % EST_INTERVAL == 0 && current_test_page != 0 && current_test_page != sample_size){
-        draw_estimate('mid');
-        return;
-    }
+    // else if(current_test_page % EST_INTERVAL == 0 && current_test_page != 0 && current_test_page != sample_size){
+    //    draw_estimate('mid');
+    //    return;
+    // }
     showStimulation();
 }
 
