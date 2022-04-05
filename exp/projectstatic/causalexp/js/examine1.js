@@ -6,9 +6,9 @@ var estimations = [];
 var predictions = [];
 var sample_order = [];
 var mutation_prediction = [];
-let scenarios = shuffle(['mouse']);
-let frequency = shuffle(['1']);
-let bgcolors = shuffle(['#FFFFF0']);
+let scenarios = shuffle(['one','two','three']);
+let frequency = shuffle(['1','2','3']);
+let bgcolors = shuffle(['#FFFFF0','#FFFFF0','#FFFFF0']);
 let image_type = ["p", "notp", "q", "notq"];
 let img_combination = {
     'a': {'cause': 'p', 'effect': 'q'},
