@@ -31,13 +31,13 @@ p{
     margin:auto;
 }
 #sample_before{
-    width: 40%;
+    width: 45%;
 }
 #arrow{
     width: 10%;
 }
 #sample_after{
-    width: 40%;
+    width: 30%;
 }
 #estimate_description{
     display:inline-grid;
