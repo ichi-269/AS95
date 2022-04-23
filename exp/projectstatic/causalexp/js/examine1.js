@@ -8,7 +8,7 @@ var sample_order = [];
 var mutation_prediction = [];
 let scenarios = shuffle(['one','two','three','four','five','six','eight','nine','ten','eleven','twelve','thirteen']);
 let frequency = shuffle(['1','2','3','4','5','6','7','8','9','10','11','12','13']);
-let bgcolors = shuffle(['#FFFFF0']);
+let bgcolors = shuffle(['#f0f8ff','#ffffe0','#d3d3d3','#b0c4de','#f0e68c','#faf0e6','#7fffd4','#ffc0cb','#fff0f5','#e0ffff','#fdf5e6','#f0ffff','#f5f5dc']);
 let image_type = ["p", "notp", "q", "notq"];
 let img_combination = {
     'a': {'cause': 'p', 'effect': 'q'},
@@ -253,9 +253,9 @@ function draw_estimate(c) {
     document.getElementById('estimate_description').innerHTML = 
         '<p>' + test_order[scenarios[sce_idx]]['result'] + 'と思いますか？</p><br>' + 
         '<p>0: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の服用は' +
-        test_order[scenarios[sce_idx]]['jp_name'] + 'の体調の悪化を全く引き起こさない</p><br>' + 
+        test_order[scenarios[sce_idx]]['jp_name'] + 'の発疹を全く引き起こさない</p><br>' + 
         '<p>100: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の服用は' +
-        test_order[scenarios[sce_idx]]['jp_name'] + 'の体調の悪化を確実に引き起こす </p><br>' +
+        test_order[scenarios[sce_idx]]['jp_name'] + 'の発疹を確実に引き起こす </p><br>' +
         '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>'
 }
 
