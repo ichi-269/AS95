@@ -1,4 +1,4 @@
-let file = '../static/causalexp/material2.json';
+let file = '../static/causalexp/material1.json';
 var user_data = [];
 var test_order = [];
 var current_sample_selection = [];
@@ -6,9 +6,9 @@ var estimations = [];
 var predictions = [];
 var sample_order = [];
 var mutation_prediction = [];
-let scenarios = shuffle(['mouse','rabbit','pigeon','guinea_pig']);
-let frequency = shuffle(['1','2','3','4']);
-let bgcolors = shuffle(['#FFFFF0','#FFF0F5','#F0F8FF','#ffc4c4']);
+let scenarios = shuffle(['one','two','three','four','five','six','eight','nine','ten','eleven','twelve','thirteen']);
+let frequency = shuffle(['1','2','3','4','5','6','7','8','9','10','11','12','13']);
+let bgcolors = shuffle(['#f0ffff','#f5fffa','#f0fff0','#fffff0','#fdf5e6','#fff5ee','#f5f5dc','#e0ffff','#fffaf0','#f8f8ff','#fffafa','#f5f5f5','#f0f8ff']);
 let image_type = ["p", "notp", "q", "notq"];
 let img_combination = {
     'a': {'cause': 'p', 'effect': 'q'},
@@ -30,7 +30,7 @@ var user_id = 0;
 var start_time = getNow();
 var sce_idx = 0;  // 動物の判別
 var pred_i = 0;
-var EST_INTERVAL = 19;
+var EST_INTERVAL = 10;
 var cell_size = 0;
 var correct_count = 0; // predictionの正解数カウント
 
@@ -56,7 +56,6 @@ function read_json(filename) {
     }).responseText;
     return JSON.parse(json);
 }
-
 function getImages() {
     for (scenario in scenarios){
         for(type in image_type){
@@ -84,8 +83,8 @@ function to_next_scenario_description(is_first_time=false) {
     }
     resetBackGround();
     document.getElementById('page').innerHTML = "<h4>"+ (sce_idx+1) + '/' + scenarios.length +"種類目</h4>";
-    document.getElementById('scenario_title').innerHTML = "<h2>" + test_order[scenarios[sce_idx]]['jp_name'] + 
-        "に" + test_order[scenarios[sce_idx]]['chemicals'] + "という化学物質を投与した時の実験記録</h2>";
+    document.getElementById('scenario_title').innerHTML = "<h2>" + 
+        "患者に" + test_order[scenarios[sce_idx]]['chemicals'] + "という薬を投与した時の実験記録</h2>";
     document.getElementById('check_sentence').style.display = "inline-block";
     document.getElementById('description_area').style.display = "inline-block";
     document.getElementById('start_scenario_button').setAttribute("disabled",true);
@@ -116,7 +115,7 @@ function to_next_new_sample_page() {
     }
     current_test_page = 0;
     document.getElementById('show_sample_area').style.display = "inline";
-    document.getElementById('order').innerHTML = test_order[scenarios[sce_idx]]['jp_name'] + "の進捗状況";
+    document.getElementById('order').innerHTML = "実験の進捗状況";
     changeBackGround();
 
     // 提示するサンプルのリストを作り、サンプルサイズを求める。
@@ -144,10 +143,10 @@ function to_next_sample() {
         return;
     }
     // 10刺激ごとに因果関係の強さを聞く
-    else if(current_test_page % EST_INTERVAL == 0 && current_test_page != 0 && current_test_page != sample_size){
-        draw_estimate('mid');
-        return;
-    }
+    // else if(current_test_page % EST_INTERVAL == 0 && current_test_page != 0 && current_test_page != sample_size){
+    //    draw_estimate('mid');
+    //    return;
+    // }
     showStimulation();
 }
 
@@ -159,7 +158,8 @@ function showStimulation() {
     document.getElementById('first_sentence').innerHTML = "<h4>" + desc[0] + "</h4>";
     document.getElementById('last_sentence').innerHTML = "<h4>" + desc[1] + "</h4>";
     document.getElementById('show_sample_area').style.display = "inline";
-    document.getElementById('first_sentence').style.display = 'inline';
+    document.getElementById('first_sentence').style.display = 'inline-block';
+    document.getElementById('last_sentence').style.display = 'inline-block';
     document.getElementById('sample_before').style.display = 'inline';
     document.getElementById('estimate_input_area').style.display = 'none';
     document.getElementById('next_sample').style.display = 'inline';
@@ -253,10 +253,8 @@ function draw_estimate(c) {
 
     document.getElementById('estimate_description').innerHTML = 
         '<p>' + test_order[scenarios[sce_idx]]['result'] + 'と思いますか？</p><br>' + 
-        '<p>0: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という化学物質の投与は' +
-        test_order[scenarios[sce_idx]]['jp_name'] + 'の遺伝子の変異を全く引き起こさない</p><br>' + 
-        '<p>100: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という化学物質の投与は' +
-        test_order[scenarios[sce_idx]]['jp_name'] + 'の遺伝子の変異を毎回確実に引き起こす </p><br>' +
+        '<p>0: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を全く引き起こさない</p><br>' + 
+        '<p>100: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を確実に引き起こす </p><br>' +
         '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>'
 }
 
@@ -336,7 +334,7 @@ function export_results() {
             'user_data': JSON.stringify(user_data),
             'estimations': JSON.stringify(estimations),
             'predictions': JSON.stringify(predictions),
-            'file_name_suffix': 'exp2'
+            'file_name_suffix': 'exp1'
         },
         timeout: 50000
     }).done(function (response) {
@@ -376,7 +374,6 @@ function getNow() {
 	var sec = now.getSeconds();
 	var s = year + "/" + mon + "/" + day + " " + hour + ":" + min + ":" + sec; 
 	return s;
-    
 }
 
 // ブラウザバックを禁止する関数
