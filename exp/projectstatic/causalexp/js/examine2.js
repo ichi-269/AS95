@@ -138,7 +138,7 @@ function to_next_new_sample_page() {
 // 次の事例があるか確認し、存在しない場合は推定画面へ遷移
 function to_next_sample() {
     if (current_test_page >= sample_size) {
-        alert('この動物の実験結果は以上になります。');
+        alert('この病院の実験結果は以上になります。');
         draw_estimate('fin');
         return;
     }
@@ -334,7 +334,7 @@ function export_results() {
             'user_data': JSON.stringify(user_data),
             'estimations': JSON.stringify(estimations),
             'predictions': JSON.stringify(predictions),
-            'file_name_suffix': 'exp1'
+            'file_name_suffix': 'exp2'
         },
         timeout: 50000
     }).done(function (response) {
