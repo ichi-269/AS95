@@ -6,7 +6,8 @@ var estimations = [];
 var predictions = [];
 var sample_order = [];
 var mutation_prediction = [];
-let scenarios = shuffle(['one','two','three','four','five','six','eight','nine','ten','eleven','twelve','thirteen']);
+let scenarios = shuffle(['one','two','three']);
+// let scenarios = shuffle(['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen']);
 let frequency = shuffle(['1','2','3','4','5','6','7','8','9','10','11','12','13']);
 let bgcolors = shuffle(['#f0ffff','#f5fffa','#f0fff0','#fffff0','#fdf5e6','#fff5ee','#f5f5dc','#e0ffff','#fffaf0','#f8f8ff','#fffafa','#f5f5f5','#f0f8ff']);
 let image_type = ["p", "notp", "q", "notq"];
@@ -298,7 +299,7 @@ function save_estimations() {
 function  append_estimation(est_i, estimation) {
     let data = {};
     data['user_id'] = user_id;
-    data['animal'] = scenarios[sce_idx];
+    data['number'] = scenarios[sce_idx];
     data['frequency'] = frequency[sce_idx];
     data['est_i'] = est_i;
     data['estimation'] = estimation;
@@ -308,7 +309,7 @@ function  append_estimation(est_i, estimation) {
 function  append_prediction(pred_i, stimulation, cause, effect, prediction) {
     let data = {};
     data['user_id'] = user_id;
-    data['animal'] = scenarios[sce_idx];
+    data['number'] = scenarios[sce_idx];
     data['frequency'] = frequency[sce_idx];
     data['pred_i'] = pred_i;
     data['stimulation'] = stimulation;
