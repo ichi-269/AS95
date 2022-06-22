@@ -256,7 +256,8 @@ function draw_estimate(c) {
         '<p>' + test_order[scenarios[sce_idx]]['result'] + 'と思いますか？</p><br>' + 
         '<p>0: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を全く引き起こさない</p><br>' + 
         '<p>100: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を確実に引き起こす </p><br>' +
-        '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>'
+        '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>' +
+        '<p>※スライダーをクリックしたままドラッグ&ドロップすると挙動がおかしくなる場合があります。その場合はスライダーを直接クリックして値を選択してください。</p><br>'
 }
 
 // 因果関係の強さの推定値を取得する

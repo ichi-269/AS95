@@ -6,8 +6,8 @@ var estimations = [];
 var predictions = [];
 var sample_order = [];
 var mutation_prediction = [];
-let scenarios = shuffle(['one','two','three']);
-// let scenarios = shuffle(['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen']);
+// let scenarios = shuffle(['one','two','three']);
+let scenarios = shuffle(['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen']);
 let frequency = shuffle(['1','2','3','4','5','6','7','8','9','10','11','12','13']);
 let bgcolors = shuffle(['#f0ffff','#f5fffa','#f0fff0','#fffff0','#fdf5e6','#fff5ee','#f5f5dc','#e0ffff','#fffaf0','#f8f8ff','#fffafa','#f5f5f5','#f0f8ff']);
 let image_type = ["p", "notp", "q", "notq"];
@@ -256,7 +256,8 @@ function draw_estimate(c) {
         '<p>' + test_order[scenarios[sce_idx]]['result'] + 'と思いますか？</p><br>' + 
         '<p>0: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を全く引き起こさない</p><br>' + 
         '<p>100: ' + test_order[scenarios[sce_idx]]['chemicals'] + 'という薬の投与は患者の発疹を確実に引き起こす </p><br>' +
-        '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>'
+        '<p>として、0から100の値で<b>直感的に</b>回答してください。</p><br>' +
+        '<p>※スライダーをクリックしたままドラッグ&ドロップすると挙動がおかしくなる場合があります。その場合はスライダーを直接クリックして値を選択してください。</p><br>'
 }
 
 // 因果関係の強さの推定値を取得する
