@@ -74,6 +74,12 @@
         <div id="pred_ans"></div>
         <button id="next_sample" class="next_button"  style="display: none; cursor: hand; cursor:pointer;" onclick="to_next_sample();">次の事例へ</button>
     </div>
+    <script>
+        $('button').on('click', function() {
+            $('body').css("display","none");
+            $('body').fadeIn(300);
+        });
+    </script>
 
     <br>
     <div id="estimate_input_area" class="area" style="display:none">
