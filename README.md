@@ -1,7 +1,7 @@
 # causal induction cognitive experiment
 ## explanation
 - This is an experiment to reproduce (JOHN R.ANDERSON & CHING-FAN SHEU 1995).
-- JOHN R.ANDERSON & CHING-FAN SHEU [http://act-r.psy.cmu.edu/?post_type=publications&p=13747](http://act-r.psy.cmu.edu/?post_type=publications&p=13747)
+- JOHN R.ANDERSON & CHING-FAN SHEU 1995 [http://act-r.psy.cmu.edu/?post_type=publications&p=13747](http://act-r.psy.cmu.edu/?post_type=publications&p=13747)
 
 ## set up
 ```
